@@ -29,8 +29,8 @@ def main():
     # return 'Hello'
     return render_template('hello.html', name=socket.gethostname(), color=color_codes[COLOR])
     
-@app.route("/read_file")
-def main():
+@app.route('/read_file')
+def read_file():
     # return 'Hello'
     f = open("/data/testfile.txt")
     contents = f.read()
