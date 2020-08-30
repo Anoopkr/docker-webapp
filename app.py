@@ -28,6 +28,13 @@ COLOR = random.choice(["red", "green", "blue", "blue2", "darkblue", "pink"])
 def main():
     # return 'Hello'
     return render_template('hello.html', name=socket.gethostname(), color=color_codes[COLOR])
+    
+@app.route("/read_file")
+def main():
+    # return 'Hello'
+    f = open("/data/testfile.txt")
+    contents = f.read()
+    return render_template('hello.html', name=socket.gethostname(), contents=contents, color=color_codes[COLOR])    
 
 
 if __name__ == "__main__":
